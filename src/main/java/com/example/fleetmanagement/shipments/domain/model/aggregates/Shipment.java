@@ -79,7 +79,7 @@ public class Shipment extends AuditableAbstractAggregateRoot<Shipment> {
     }
 
     public Shipment startShipment() {
-        if (this.status == ShipmentStatus.PENDING) { throw new IllegalStateException("Cannot start shipment that is not in PENDING status"); }
+        if (this.status != ShipmentStatus.PENDING) { throw new IllegalStateException("Cannot start shipment that is not in PENDING status"); }
         if (this.carrierId == null) { throw new IllegalStateException("Cannot start shipment without an assigned carrier"); }
         this.status = ShipmentStatus.IN_PROGRESS;
         this.startedDate = LocalDateTime.now();
