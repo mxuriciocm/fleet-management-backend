@@ -36,4 +36,18 @@ public interface ReportQueryService {
      * @return a List of Reports of the specified type
      */
     List<Report> handle(GetReportsByTypeQuery query);
+
+    /**
+     * Handle Get Reports by Vehicle ID Query
+     * @param query the query containing the vehicle ID
+     * @return a List of Reports associated with the specified vehicle ID
+     */
+    List<Report> handle(GetReportsByVehicleIdQuery query);
+
+    /**
+     * Handle Get Reports by Date Range Query
+     * @param query the query containing the start and end dates
+     * @return a List of Reports within the specified date range
+     */
+    List<Report> handle(GetReportsByShipmentIdQuery query);
 }

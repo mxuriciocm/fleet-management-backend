@@ -1,10 +1,7 @@
 package com.example.fleetmanagement.reports.application.internal.queryservices;
 
 import com.example.fleetmanagement.reports.domain.model.aggregates.Report;
-import com.example.fleetmanagement.reports.domain.model.queries.GetReportByIdQuery;
-import com.example.fleetmanagement.reports.domain.model.queries.GetReportsByCarrierIdQuery;
-import com.example.fleetmanagement.reports.domain.model.queries.GetReportsByManagerIdQuery;
-import com.example.fleetmanagement.reports.domain.model.queries.GetReportsByTypeQuery;
+import com.example.fleetmanagement.reports.domain.model.queries.*;
 import com.example.fleetmanagement.reports.domain.services.ReportQueryService;
 import com.example.fleetmanagement.reports.infrastructure.persistence.jpa.repositories.ReportRepository;
 import org.springframework.stereotype.Service;
@@ -38,5 +35,15 @@ public class ReportQueryServiceImpl implements ReportQueryService {
     @Override
     public List<Report> handle(GetReportsByTypeQuery query) {
         return reportRepository.findByType(query.type());
+    }
+
+    @Override
+    public List<Report> handle(GetReportsByVehicleIdQuery query) {
+        return reportRepository.findByVehicleId(query.vehicleId());
+    }
+
+    @Override
+    public List<Report> handle(GetReportsByShipmentIdQuery query) {
+        return reportRepository.findByShipmentId(query.shipmentId());
     }
 }

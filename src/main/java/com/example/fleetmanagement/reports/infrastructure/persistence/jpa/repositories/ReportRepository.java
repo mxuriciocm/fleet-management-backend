@@ -46,4 +46,18 @@ public interface ReportRepository extends JpaRepository<Report, Long> {
      * @return a List of Reports associated with the specified manager ID and type
      */
     List<Report> findByManagerIdAndType(Long managerId, ReportType type);
+
+    /**
+     * Find reports by vehicle ID.
+     * @param vehicleId the ID of the vehicle
+     * @return a List of Reports associated with the specified vehicle ID
+     */
+    List<Report> findByVehicleId(Long vehicleId);
+
+    /**
+     * Find reports by shipment ID.
+     * @param shipmentId the ID of the shipment
+     * @return a List of Reports associated with the specified shipment ID
+     */
+    List<Report> findByShipmentId(Long shipmentId);
 }
