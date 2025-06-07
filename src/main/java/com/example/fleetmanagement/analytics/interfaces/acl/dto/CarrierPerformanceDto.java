@@ -12,7 +12,11 @@ public record CarrierPerformanceDto(
         int cancelledShipments,
         double completionRate,
         int totalReports,
-        LocalDate lastShipmentDate
+        int vehicleReports,
+        int routeReports,
+        int technicalIssueReports,
+        LocalDate lastShipmentDate,
+        String vehicleInfo
 ) {
 }
 

@@ -17,11 +17,15 @@ public class CarrierPerformanceResourceFromDtoAssembler {
                 dto.cancelledShipments(),
                 dto.completionRate(),
                 dto.totalReports(),
-                dto.lastShipmentDate()
+                dto.vehicleReports(),
+                dto.routeReports(),
+                dto.technicalIssueReports(),
+                dto.lastShipmentDate(),
+                dto.vehicleInfo()
         );
     }
 
-    public static List<CarrierPerformanceResource> toResourceListFromDtos(List<CarrierPerformanceDto> dtos) {
+    public static List<CarrierPerformanceResource> toResourcesFromDtos(List<CarrierPerformanceDto> dtos) {
         return dtos.stream()
                 .map(CarrierPerformanceResourceFromDtoAssembler::toResourceFromDto)
                 .toList();
