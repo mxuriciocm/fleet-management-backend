@@ -1,6 +1,7 @@
 package com.example.fleetmanagement.vehicles.application.acl;
 
 import com.example.fleetmanagement.vehicles.domain.model.aggregates.Vehicle;
+import com.example.fleetmanagement.vehicles.domain.model.queries.GetVehicleByCarrierIdQuery;
 import com.example.fleetmanagement.vehicles.domain.model.queries.GetVehicleByIdQuery;
 import com.example.fleetmanagement.vehicles.domain.model.queries.GetVehicleByLicensePlateQuery;
 import com.example.fleetmanagement.vehicles.domain.model.queries.GetVehiclesByManagerIdQuery;
@@ -43,7 +44,7 @@ public class VehicleContextFacadeImpl implements VehicleContextFacade {
 
     @Override
     public Optional<VehicleDto> fetchVehicleByCarrierId(Long carrierId) {
-        return vehicleQueryService.handle(new GetVehicleByIdQuery(carrierId))
+        return vehicleQueryService.handle(new GetVehicleByCarrierIdQuery(carrierId))
                 .map(this::mapToDto);
     }
 

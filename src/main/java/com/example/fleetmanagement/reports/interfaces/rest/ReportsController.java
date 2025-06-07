@@ -4,6 +4,7 @@ import com.example.fleetmanagement.iam.interfaces.acl.IamContextFacade;
 
 import com.example.fleetmanagement.reports.domain.model.queries.GetReportByIdQuery;
 import com.example.fleetmanagement.reports.domain.model.queries.GetReportsByCarrierIdQuery;
+import com.example.fleetmanagement.reports.domain.model.queries.GetReportsByManagerIdQuery;
 import com.example.fleetmanagement.reports.domain.model.queries.GetReportsByTypeQuery;
 import com.example.fleetmanagement.reports.domain.model.valueobjects.ReportType;
 import com.example.fleetmanagement.reports.domain.services.ReportCommandService;
@@ -145,7 +146,7 @@ public class ReportsController {
         if (!canAccessReportsByManager(managerId)) {
             return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
         }
-        var reports = reportQueryService.handle(new GetReportsByCarrierIdQuery(managerId));
+        var reports = reportQueryService.handle(new GetReportsByManagerIdQuery(managerId));
         if (reports.isEmpty()) { return ResponseEntity.noContent().build(); }
         var resources = ReportResourceFromEntityAssembler.toResourceFromEntities(reports);
         return ResponseEntity.ok(resources);

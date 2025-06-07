@@ -6,7 +6,7 @@ import com.example.fleetmanagement.shipments.domain.model.queries.GetShipmentsBy
 import com.example.fleetmanagement.shipments.domain.model.queries.GetShipmentsByManagerIdQuery;
 import com.example.fleetmanagement.shipments.domain.model.queries.GetShipmentsByStatusQuery;
 import com.example.fleetmanagement.shipments.domain.services.ShipmentQueryService;
-import com.example.fleetmanagement.shipments.infrastructure.persitence.jpa.repositories.ShipmentRepository;
+import com.example.fleetmanagement.shipments.infrastructure.persistence.jpa.repositories.ShipmentRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

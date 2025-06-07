@@ -1,4 +1,4 @@
-package com.example.fleetmanagement.shipments.infrastructure.persitence.jpa.repositories;
+package com.example.fleetmanagement.shipments.infrastructure.persistence.jpa.repositories;
 
 import com.example.fleetmanagement.shipments.domain.model.aggregates.Shipment;
 import com.example.fleetmanagement.shipments.domain.model.valueobjects.ShipmentStatus;

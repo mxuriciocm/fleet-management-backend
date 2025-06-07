@@ -5,7 +5,7 @@ import com.example.fleetmanagement.shipments.domain.model.commands.CreateShipmen
 import com.example.fleetmanagement.shipments.domain.model.commands.UpdateShipmentCommand;
 import com.example.fleetmanagement.shipments.domain.model.valueobjects.ShipmentStatus;
 import com.example.fleetmanagement.shipments.domain.services.ShipmentCommandService;
-import com.example.fleetmanagement.shipments.infrastructure.persitence.jpa.repositories.ShipmentRepository;
+import com.example.fleetmanagement.shipments.infrastructure.persistence.jpa.repositories.ShipmentRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
