@@ -5,9 +5,9 @@ import com.example.fleetmanagement.analytics.domain.model.valueobjects.SortDirec
 import com.example.fleetmanagement.analytics.domain.services.AnalyticQueryService;
 import com.example.fleetmanagement.analytics.interfaces.acl.dto.CarrierPerformanceDto;
 import com.example.fleetmanagement.iam.interfaces.acl.IamContextFacade;
-import com.example.fleetmanagement.profile.interfaces.acl.ProfileContextFacade;
-import com.example.fleetmanagement.profile.interfaces.acl.dto.ProfileDto;
-import com.example.fleetmanagement.reports.interfaces.acl.ReportContextFacade;
+import com.example.fleetmanagement.profiles.interfaces.acl.ProfileContextFacade;
+import com.example.fleetmanagement.profiles.interfaces.acl.dto.ProfileDto;
+import com.example.fleetmanagement.issues.interfaces.acl.IssueContextFacade;
 import com.example.fleetmanagement.shipments.interfaces.acl.ShipmentContextFacade;
 import com.example.fleetmanagement.vehicles.interfaces.acl.VehicleContextFacade;
 import com.example.fleetmanagement.vehicles.interfaces.acl.dto.VehicleDto;
@@ -23,19 +23,19 @@ import java.util.Optional;
 public class AnalyticQueryServiceImpl implements AnalyticQueryService {
     private final VehicleContextFacade vehicleContextFacade;
     private final ShipmentContextFacade shipmentContextFacade;
-    private final ReportContextFacade reportContextFacade;
+    private final IssueContextFacade issueContextFacade;
     private final IamContextFacade iamContextFacade;
     private final ProfileContextFacade profileContextFacade;
 
     public AnalyticQueryServiceImpl(
             VehicleContextFacade vehicleContextFacade,
             ShipmentContextFacade shipmentContextFacade,
-            ReportContextFacade reportContextFacade,
+            IssueContextFacade issueContextFacade,
             IamContextFacade iamContextFacade,
             ProfileContextFacade profileContextFacade) {
         this.vehicleContextFacade = vehicleContextFacade;
         this.shipmentContextFacade = shipmentContextFacade;
-        this.reportContextFacade = reportContextFacade;
+        this.issueContextFacade = issueContextFacade;
         this.iamContextFacade = iamContextFacade;
         this.profileContextFacade = profileContextFacade;
     }
@@ -80,7 +80,7 @@ public class AnalyticQueryServiceImpl implements AnalyticQueryService {
             }
         }
 
-        var reports = reportContextFacade.fetchReportsByCarrierId(carrierId);
+        var reports = issueContextFacade.fetchReportsByCarrierId(carrierId);
         var totalReports = reports.size();
 
         int vehicleReports = 0;

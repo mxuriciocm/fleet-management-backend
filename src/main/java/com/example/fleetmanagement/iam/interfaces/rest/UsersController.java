@@ -5,7 +5,7 @@ import com.example.fleetmanagement.iam.domain.model.queries.GetUserByIdQuery;
 import com.example.fleetmanagement.iam.domain.services.UserQueryService;
 import com.example.fleetmanagement.iam.interfaces.rest.resources.UserWithProfileResource;
 import com.example.fleetmanagement.iam.interfaces.rest.transform.UserWithProfileResourceFromEntityAssembler;
-import com.example.fleetmanagement.profile.interfaces.acl.ProfileContextFacade;
+import com.example.fleetmanagement.profiles.interfaces.acl.ProfileContextFacade;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;

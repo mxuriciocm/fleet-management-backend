@@ -10,7 +10,7 @@ import com.example.fleetmanagement.iam.domain.model.commands.SignUpCommand;
 import com.example.fleetmanagement.iam.domain.services.UserCommandService;
 import com.example.fleetmanagement.iam.infrastructure.persistence.jpa.repositories.RoleRepository;
 import com.example.fleetmanagement.iam.infrastructure.persistence.jpa.repositories.UserRepository;
-import com.example.fleetmanagement.profile.interfaces.acl.ProfileContextFacade;
+import com.example.fleetmanagement.profiles.interfaces.acl.ProfileContextFacade;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.springframework.stereotype.Service;
 

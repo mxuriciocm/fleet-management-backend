@@ -2,7 +2,7 @@ package com.example.fleetmanagement.iam.interfaces.rest.transform;
 
 import com.example.fleetmanagement.iam.domain.model.aggregates.User;
 import com.example.fleetmanagement.iam.interfaces.rest.resources.UserWithProfileResource;
-import com.example.fleetmanagement.profile.interfaces.acl.dto.ProfileDto;
+import com.example.fleetmanagement.profiles.interfaces.acl.dto.ProfileDto;
 
 import java.util.Optional;
 import java.util.stream.Collectors;

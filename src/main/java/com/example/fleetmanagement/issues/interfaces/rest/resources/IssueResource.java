@@ -1,0 +1,7 @@
+package com.example.fleetmanagement.issues.interfaces.rest.resources;
+
+import com.example.fleetmanagement.issues.domain.model.valueobjects.IssueType;
+
+import java.time.LocalDateTime;
+
+public record IssueResource(Long id, String title, String content, IssueType type, LocalDateTime reportDate, Long carrierId, Long managerId, Long vehicleId, Long shipmentId) {}
